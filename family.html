@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family - Forever Bond</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, rgba(255,229,236,0.95), rgba(254,246,249,0.95), rgba(224,247,250,0.95), rgba(248,237,235,0.95));
+      background-size: 400% 400%;
+      animation: backgroundGradient 15s ease infinite;
+      overflow: hidden;
+      color: #333;
+    }
+
+    @keyframes backgroundGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .slide {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .slide:nth-of-type(1) { background-position: top; }
+    .slide:nth-of-type(2) { background-position: center; }
+    .slide:nth-of-type(3) { background-position: center; }
+    .slide:nth-of-type(4) { background-position: top; }
+    .slide:nth-of-type(5) { background-position: center; }
+    .slide:nth-of-type(6) { background-position: center; }
+    .slide:nth-of-type(7) { background-position: top; }
+    .slide:nth-of-type(8) { background-position: top; }
+    .slide:nth-of-type(9) { background-position: top; }
+
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(0.5px);
+      z-index: 0;
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .slide-content h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: #cc3366;
+      margin-bottom: 20px;
+    }
+
+    .slide-content img {
+      width: 100%;
+      max-height: 60vh;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .heart-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 2rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      z-index: 2;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .slide { display: none; }
+    .slide.active { display: flex; }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: #cc3366;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-btn:hover {
+      background: #a02965;
+    }
+  </style>
+</head>
+<body>
+  <button class="back-btn" onclick="location.href='index.html'">⬅ Back</button>
+
+  <div class="slide active" style="background-image: url('family/1.jpg')">
+    <div class="slide-content">
+      <h2>"Home is wherever we’re together. 🏡❤️"</h2>
+      <img src="family/1.jpg" alt="Family Photo 1">
+    </div>
+    <button class="heart-btn" onclick="nextSlide()">❤️</button>
+  </div>
+  <div class="slide" style="background-image: url('family/3.jpg')">
+    <div class="slide-content">
+      <h2>"Roots that hold us, love that binds us. 🌳💕"</h2>
+      <img src="family/3.jpg" alt="Family Photo 3">
+    </div>
+    <button class="heart-btn" onclick="nextSlide()">❤️</button>
+  </div>
+  <div class="slide" style="background-image: url('family/4.jpg')">
+    <div class="slide-content">
+      <h2>"Cherished moments frozen in time. 🕰️📸"</h2>
+      <img src="family/4.jpg" alt="Family Photo 4">
+    </div>
+    <button class="heart-btn" onclick="nextSlide()">❤️</button>
+  </div>
+  <div class="slide" style="background-image: url('family/5.jpg')">
+    <div class="slide-content">
+      <h2>"Hugs, memories, and a lifetime of love. 🤗💞"</h2>
+      <img src="family/5.jpg" alt="Family Photo 5">
+    </div>
+    <button class="heart-btn" onclick="nextSlide()">❤️</button>
+  </div>
+  <div class="slide" style="background-image: url('family/6.jpg')">
+    <div class="slide-content">
+      <h2>"The greatest gift is family. 🎁👪"</h2>
+      <img src="family/6.jpg" alt="Family Photo 6">
+    </div>
+    <button class="heart-btn" onclick="nextSlide()">❤️</button>
+  </div>
+  <div class="slide" style="background-image: url('family/7.jpg')">
+    <div class="slide-content">
+      <h2>"Each smile tells a story. 😊📖"</h2>
+      <img src="family/7.jpg" alt="Family Photo 7">
+    </div>
+    <button class="heart-btn" onclick="nextSlide()">❤️</button>
+  </div>
+  <div class="slide" style="background-image: url('family/8.jpg')">
+    <div class="slide-content">
+      <h2>"Together, we build dreams. 🧱🌈"</h2>
+      <img src="family/8.jpg" alt="Family Photo 8">
+    </div>
+    <button class="heart-btn" onclick="nextSlide()">❤️</button>
+  </div>
+  <div class="slide" style="background-image: url('family/9.jpg')">
+    <div class="slide-content">
+      <h2>"Through thick and thin, we remain. 🌧️☀️"</h2>
+      <img src="family/9.jpg" alt="Family Photo 9">
+    </div>
+    <button class="heart-btn" onclick="nextSlide()">❤️</button>
+  </div>
+  <div class="slide" style="background-image: url('family/10.jpg')">
+    <div class="slide-content">
+      <h2>"Love lives here, always. 🏠❤️"</h2>
+      <img src="family/10.jpg" alt="Family Photo 10">
+    </div>
+    <button class="heart-btn" onclick="location.href='index.html'">🏠</button>
+  </div>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function nextSlide() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }
+  </script>
+
+  <audio id="bg-music" loop>
+  <source src="music/family-love.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const audio = document.getElementById('bg-music');
+  audio.volume = 0;
+
+  function startAudioWithFadeIn() {
+    audio.play().then(() => {
+      let fadeIn = setInterval(() => {
+        if (audio.volume < 0.5) {
+          audio.volume += 0.01;
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 100);
+    }).catch(err => {
+      console.log("Playback failed:", err);
+    });
+
+    document.removeEventListener('click', startAudioWithFadeIn);
+  }
+
+  document.addEventListener('click', startAudioWithFadeIn);
+
+  // Fade-out before navigating away
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      let fadeOut = setInterval(() => {
+        if (audio.volume > 0.01) {
+          audio.volume -= 0.01;
+        } else {
+          clearInterval(fadeOut);
+          window.location.href = this.href;
+        }
+      }, 60);
+    });
+  });
+</script>
+
+</body>
+</html>
